@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_osm_plugin: ^0.70.3
   geolocator: ^10.1.0
+  location_picker_flutter_map: ^2.1.0
 
 dev_dependencies:
   flutter_test:

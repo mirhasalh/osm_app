@@ -5,10 +5,14 @@ Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case '/':
       return MaterialPageRoute(builder: (_) => const PositionPage());
-    case '/osm':
-      final args = settings.arguments as OsmArgs;
+    case '/maps':
+      final args = settings.arguments as MapsArgs;
       return MaterialPageRoute(
-          builder: (_) => OsmPage(lat: args.lat, lng: args.lng));
+          builder: (_) => MapsPage(lat: args.lat, lng: args.lng));
+    case '/search-and-pick':
+      final args = settings.arguments as SearchAndPickArgs;
+      return MaterialPageRoute(
+          builder: (_) => SearchAndPickPage(lat: args.lat, lng: args.lng));
     default:
       return MaterialPageRoute(
         builder: (_) => Scaffold(

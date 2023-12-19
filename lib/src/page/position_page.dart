@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
-import 'osm_page.dart' show OsmArgs;
+import 'maps_page.dart' show MapsArgs;
+import 'search_and_pick_page.dart' show SearchAndPickArgs;
 
 class PositionPage extends StatefulWidget {
   static const routeName = '/';
@@ -42,16 +43,30 @@ class _PositionPageState extends State<PositionPage> {
                   FilledButton.icon(
                     onPressed: () {
                       final nav = Navigator.of(context);
-                      final args = OsmArgs(
+                      final args = MapsArgs(
                         lat: _position.latitude,
                         lng: _position.longitude,
                       );
 
-                      nav.pushNamed('/osm', arguments: args);
+                      nav.pushNamed('/maps', arguments: args);
                     },
                     icon: const Icon(Icons.map),
                     label: const Text('Open maps'),
-                  )
+                  ),
+                  const SizedBox(height: 16.0),
+                  FilledButton.icon(
+                    onPressed: () {
+                      final nav = Navigator.of(context);
+                      final args = SearchAndPickArgs(
+                        lat: _position.latitude,
+                        lng: _position.longitude,
+                      );
+
+                      nav.pushNamed('/search-and-pick', arguments: args);
+                    },
+                    icon: const Icon(Icons.search),
+                    label: const Text('Search and pick'),
+                  ),
                 ],
               ),
             )

@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
 
-class OsmPage extends StatefulWidget {
-  static const routeName = '/osm';
+class MapsPage extends StatefulWidget {
+  static const routeName = '/maps';
 
-  const OsmPage({super.key, required this.lat, required this.lng});
+  const MapsPage({super.key, required this.lat, required this.lng});
 
   final double lat;
   final double lng;
 
   @override
-  State<OsmPage> createState() => _OsmPageState();
+  State<MapsPage> createState() => _MapsPageState();
 }
 
-class _OsmPageState extends State<OsmPage> {
+class _MapsPageState extends State<MapsPage> {
   late double _lat;
   late double _lng;
   late MapController _controller;
@@ -68,8 +68,8 @@ class _OsmPageState extends State<OsmPage> {
   }
 }
 
-class OsmArgs {
-  const OsmArgs({required this.lat, required this.lng});
+class MapsArgs {
+  const MapsArgs({required this.lat, required this.lng});
 
   final double lat;
   final double lng;
